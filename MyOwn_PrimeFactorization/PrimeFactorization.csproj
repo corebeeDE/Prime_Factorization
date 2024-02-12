@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DA17DDFE-E916-4AEC-BA9E-F1C28507A73E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MyOwn_PrimeFactorization</RootNamespace>
-    <AssemblyName>MyOwn_PrimeFactorization</AssemblyName>
+    <RootNamespace>PrimeFactorization</RootNamespace>
+    <AssemblyName>PrimeFactorization</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

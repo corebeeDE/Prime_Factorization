@@ -1,70 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MyOwn_PrimeFactorization
+namespace PrimeFactorization
 {
     class Program
     {
         static void Main()
         {
-            int[] output = GetPrimes(15);
-            foreach (var item in output)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("---------------");
+            var testCases = new List<int>() { 15, 8, 40, 99, 256, 520 };
 
-            output = GetPrimes(8);
-            foreach (var item in output)
+            // GOOD READABILITY: Iterates through the test-cases in given list.
+            foreach (var testCase in testCases)
             {
-                Console.WriteLine(item);
+                var consoleOutput = string.Format("Prime factorization for {0}:{1}{2}{1}",
+                                                    testCase,
+                                                    Environment.NewLine,
+                                                    string.Join(Environment.NewLine, GetPrimes(testCase)));
+                Console.WriteLine(consoleOutput);
             }
-            Console.WriteLine("---------------");
 
-            output = GetPrimes(40);
-            foreach (var item in output)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("---------------");
-
-            output = GetPrimes(99);
-            foreach (var item in output)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("---------------");
-
-            output = GetPrimes(256);
-            foreach (var item in output)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("---------------");
-
-            output = GetPrimes(520);
-            foreach (var item in output)
-            {
-                Console.WriteLine(item);
-            }
-            Console.ReadKey();
+            // BAD READABILITY BUT SHORTER: Iterates through the test-cases in given list.
+            // testCases.ForEach(number => Console.WriteLine($"Prime factorization for {number}, all primes are:\n{string.Join(Environment.NewLine, GetPrimes(number))}\n"));
         }
 
-        public static int[] GetPrimes(int input)
+        public static IEnumerable<int> GetPrimes(int input)
         {
-            List<int> allPrimes = new List<int>();
+            // Iterates over possible dividers.
             for (int prime = 2; input != 1; prime++)
             {
+                // Iterates over divider until it is not possible anymore.
                 while (input % prime == 0 && input != 1)
                 {
                     input /= prime;
-                    allPrimes.Add(prime);
+                    yield return prime;
+                    // FYI: There are alternatives to yielding (which do not result in an IEnumerable<int> like in this case), but I wanted to test/fiddle around since I compare it to Pythons version.
                 }
             }
-            return allPrimes.ToArray();
         }
     }
 }

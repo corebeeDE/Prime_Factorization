@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32106.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOwn_PrimeFactorization", "MyOwn_PrimeFactorization\MyOwn_PrimeFactorization.csproj", "{DA17DDFE-E916-4AEC-BA9E-F1C28507A73E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactorization", "MyOwn_PrimeFactorization\PrimeFactorization.csproj", "{DA17DDFE-E916-4AEC-BA9E-F1C28507A73E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
